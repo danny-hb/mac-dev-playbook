@@ -98,45 +98,45 @@
       when: configure_pyenv
       tags: ['pyenv']
 
-    - name: 3.6 install pipenv
+    - name: 3.6 install poetry
       ansible.builtin.pip:
-        name: pipenv
+        name: poetry
         executable: pip3.6
       environment:
         PYENV_VERSION: "{{ pyenv_python36_version }}"
       when: configure_pyenv
       tags: ['pyenv']
 
-    - name: 3.7 install pipenv
+    - name: 3.7 install poetry
       ansible.builtin.pip:
-        name: pipenv
+        name: poetry
         executable: pip3.7
       environment:
         PYENV_VERSION: "{{ pyenv_python37_version }}"
       when: configure_pyenv
       tags: ['pyenv']
 
-    - name: 3.8 install pipenv
+    - name: 3.8 install poetry
       ansible.builtin.pip:
-        name: pipenv
+        name: poetry
         executable: pip3.8
       environment:
         PYENV_VERSION: "{{ pyenv_python38_version }}"
       when: configure_pyenv
       tags: ['pyenv']
 
-    - name: 3.9 install pipenv
+    - name: 3.9 install poetry
       ansible.builtin.pip:
-        name: pipenv
+        name: poetry
         executable: pip3.9
       environment:
         PYENV_VERSION: "{{ pyenv_python39_version }}"
       when: configure_pyenv
       tags: ['pyenv']
 
-    - name: 3.10 install pipenv
+    - name: 3.10 install poetry
       ansible.builtin.pip:
-        name: pipenv
+        name: poetry
         executable: pip3.10
       environment:
         PYENV_VERSION: "{{ pyenv_python310_version }}"
@@ -145,7 +145,7 @@
 
     # hack, install ansible on the new system python, so after the first time we run this,
     # ansible is ready to go again, because pyenv resets the global python version
-    - name: 3.8 install pipenv
+    - name: 3.8 install ansible
       ansible.builtin.pip:
         name: ansible
         executable: pip3.8
